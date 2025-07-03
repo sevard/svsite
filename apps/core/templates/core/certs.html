@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}<title>Certs</title>{% endblock title %}
+
+{% block content %}
+
+<main class="container mt-5">
+    <div class="my-5">
+        <section class="py-3">
+            <h1>Certificates</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+                {% for cert in certificates %}
+
+                <div class="card-group">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text fredoka-weight-400"><b>{{ cert.title }}</b> </p>
+                            <p>Completion Date: {{ cert.completed_on }}</p>
+                            <p>{{ cert.description }}</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{{ cert.certificate_url }}" target="_blank">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Verify <i class="fa-solid fa-certificate"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </section>
+    </div>
+</main>
+
+{% endblock content %}

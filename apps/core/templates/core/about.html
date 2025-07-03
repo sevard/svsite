@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}<title>About Sergey Vardanyan</title>{% endblock title %}
+
+{% block content %}
+<main class="container mt-5">
+    <div class="bg-body-tertiary my-5">
+        <section class="row align-items-center pt-5">
+            <div class="p-3 mb-4 rounded-3">
+                <div class="container-fluid">
+                    <article class="row align-items-center">
+
+                        <div class="col-md-8">
+                            <h1>Hi! It's me, <br> Sergey Vardanyan</h1>
+                            <br>
+                            <h2 class="mt-2">I am a Software Developer</h2>
+                        </div>
+
+                        <div class="col-md-4 mb-1">
+                            <img class="my-photo rounded-3" src="{% static 'images/me2.jpg' %}" alt="sergey vardanyan">
+                            <div class="social-links mt-5">
+                                <span>
+                                    <a href="https://www.linkedin.com/in/sergey-vardanyan-724811229/" rel="nofollow" target="_blank">LinkedIn</a> /
+                                </span>
+                                <span>
+                                    <a href="https://github.com/sevard" rel="nofollow" target="_blank">GitHub</a> /
+                                </span>
+                            </div>
+                        </div>
+                    </article><!--row-->
+                </div><!--container-->
+            </div><!--jumbotron-->
+        </section>
+
+        <section class="row align-items-center">
+            <div class="p-3 mb-4 rounded-3">
+            <!-- <div class="p-3"> -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <article class="col-md-7 mb-5">
+                            <h2>About Me</h1>
+                            <hr class="my-4">
+                            <p class="fs-5 mt-2"> 
+                                I am a passionate software developer with expertise in a variety of technologies. 
+                                Over the years, I’ve honed my skills to craft high-quality, efficient solutions that meet the highest standards. 
+                                I thrive on tackling challenges and am committed to delivering excellence in every project I undertake.
+                                <br> <br>
+                                This website serves as a hub to showcase my projects, highlight my skills, and share useful resources for those 
+                                interested in web development.
+
+                                What truly excites me about software development is the way the internet connects people across the globe. 
+                                It's remarkable how we sometimes take for granted what was meticulously engineered over decades by countless 
+                                brilliant minds. Knowing the rich history behind this innovation—the collective effort of so many 
+                                engineers—drives my motivation and fuels my passion for staying involved and contributing to this incredible 
+                                field. Thank you for visiting, and I hope you find value in what I share here!
+                            </p>
+                        </article>
+                        <article class="col-md-5 mb-5">
+                            <h2>Skills</h1>
+                            <hr class="my-4">
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-python"></i> Python/ Django / Flask</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-js"></i> JavaScript / TypeScript / React</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-html5"></i> HTML / CSS</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-java"></i> Java / SpringBoot</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-solid fa-cloud"></i> SQL / MongoDB</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-linux"></i> Linux / Shell Script</li>
+                                <li class="list-group-item list-group-item-action list-group-item-light"><i class="fa-brands fa-github"></i> Git / GitHub</li>
+                            </ul>
+                        </article>
+                    </div><!--row-->
+                </div><!--container-->
+            </div><!--jumbotron-->
+        </section>
+    </div>
+</main>
+{% endblock content %}

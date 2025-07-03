@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html class="h-100" lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="sergey vardanyan">
+    <meta name="email" content="srg.v@posteo.us">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Fontawsome -->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css"> 
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
+
+    <!-- Custom JavaScript -->
+    <script src="{% static 'js/custom.js' %}" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon_io/favicon-32x32.png' %}" type="image/x-icon" />
+
+   {% block title %}<title>Sergey Vardanyan</title>{% endblock title %}
+
+  </head>
+
+  <body class="d-flex flex-column bg-body-secondary h-100">
+    
+    {% block navbar %}
+        <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3 fs-4 fixed-top" data-bs-theme="dark"> -->
+        <!-- <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom border-body" data-bs-theme="dark"> -->
+        <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom border-body fixed-top" data-bs-theme="dark">
+
+          <div class="container-fluid">
+          
+            <a class="mx-4 navbar-brand" href="{% url 'core:about' %}"><i class="fa-solid fa-microchip fa-beat-fade" style="color: #f0bc88;"></i></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto fredoka-weight-700">
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'core:about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'core:certs' %}">Certificates</a>
+                </li>
+              
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Web Tools </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">IP Lookup</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">SHA</a>
+                    </li>
+                  </ul>
+
+                </li>
+              </ul>
+
+              <!-- Icons -->
+              <ul class="navbar-nav d-flex flex-row mx-1">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link text-white" href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+                </li>
+              </ul>
+
+            </div> <!-- end buttons -->
+          </div> <!-- end container-->
+        </nav>
+    {% endblock navbar %}
+
+    <!--######### BLOCK CONTENT ##########-->
+      {% block content %} <h1>Awesome sause!</h1> {% endblock content %}
+    <!--######### BLOCK CONTENT ##########-->
+
+    <footer class="footer mt-auto">
+      <div class="p-4 bg-secondary">
+      <div class="container">
+        <div class="social-links">
+          <span class="text-muted mx-3"><a class="fs-1" href="https://github.com/sevard" rel="nofollow" target="_blank"><i class="fa-brands fa-github"></i></a></span>
+          <span class="text-muted mx-3"><a class="fs-1" href="https://www.linkedin.com/in/sergey-vardanyan-724811229/" rel="nofollow" target="_blank"><i class="fa-brands fa-linkedin"></i></a></span>
+        </div>
+        <hr>
+          {% now "Y" as current_year %}
+          <span>Copyright {{ current_year }} &#169; Sergey Vardanyan
+          <span class="social-links"><a href="mailto://srg.v@posteo.us">Drop me a line</a></span>
+      </div>
+      </div>
+    </footer>
+
+    <!-- Custom JavaScript for Webtools app-->
+    <!-- <script src="{% static 'webtools/js/webtools.js' %}" defer></script> -->
+
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

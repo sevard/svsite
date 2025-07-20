@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} <title>IP Lookup</title> {% endblock title %}
+
+{% block content %}
+
+<main class="container mt-5">
+    <article class="mt-5">
+
+        <div class="row justify-content-sm-center"> 
+            <div class="col-sm-10">
+                <h1 class="display-5">IP Lookup</h1>
+            </div>
+        </div> 
+
+        <div class="row g-4 justify-content-sm-center"> 
+            <div class="col-sm-10">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>IP:</strong> {{ ctx.ip }} </li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>IP Type:</strong> {{ ctx.type }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Continent Code:</strong> {{ ctx.continent_code }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Continent Name:</strong> {{ ctx.continent_name }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Country Code:</strong> {{ ctx.country_code }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark">
+                        <strong>Country Name:</strong> {{ ctx.country_name }}
+                        <img src="{{ ctx.location.country_flag }}" width="20" height="20" alt="Flag of {{ ctx.country_name }}">
+                    </li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Region Code:</strong> {{ ctx.region_code }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Region Name:</strong> {{ ctx.region_name }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>City:</strong> {{ ctx.city }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Zip:</strong> {{ ctx.zip }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Latitude:</strong> {{ ctx.latitude }}</li>
+                    <li class="list-group-item list-group-item-action list-group-item-dark"><strong>Longitude:</strong> {{ ctx.longitude }}</li>
+                </ul>
+            </div>
+
+            <div class="col-sm-10">
+                <iframe
+                    width="100"
+                    height="300"
+                    style="width: 100%; min-height: 300px; aspect-ratio: 16/9; border: 2px solid #ccc; border-radius: 8px;"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q={{ ctx.latitude }},{{ ctx.longitude }}&output=embed"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+    </article>
+
+</main>
+
+{% endblock content %}

@@ -2,29 +2,29 @@
 #    uv export --format requirements-txt --no-hashes --output-file requirements.txt
 asgiref==3.8.1
     # via django
-async-timeout==5.0.1 ; python_full_version < '3.11.3'
-    # via redis
+certifi==2025.7.14
+    # via requests
+charset-normalizer==3.4.2
+    # via requests
 django==5.2.3
-    # via
-    #   dev-portfolio
-    #   django-redis
-django-redis==6.0.0
-    # via dev-portfolio
+    # via svsite
 fontawesomefree==6.6.0
-    # via dev-portfolio
+    # via svsite
 gunicorn==23.0.0
-    # via dev-portfolio
+    # via svsite
+idna==3.10
+    # via requests
 packaging==25.0
     # via gunicorn
-psycopg2-binary==2.9.10
-    # via dev-portfolio
 python-dotenv==1.1.0
-    # via dev-portfolio
-redis==6.2.0
-    # via django-redis
+    # via svsite
+requests==2.32.4
+    # via svsite
 sqlparse==0.5.3
     # via django
 tzdata==2025.2 ; sys_platform == 'win32'
     # via django
+urllib3==2.5.0
+    # via requests
 whitenoise==6.9.0
-    # via dev-portfolio
+    # via svsite

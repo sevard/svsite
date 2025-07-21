@@ -6,7 +6,6 @@
 
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,13 +22,14 @@
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css">
 
     <!-- Custom JavaScript -->
     <script src="{% static 'js/custom.js' %}" defer></script>
+    <script src="{% static 'webtools/js/webtools.js' %}" defer></script>
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'favicon_io/favicon-32x32.png' %}" type="image/x-icon" />
+    <link rel="icon" href="{% static 'favicon_io/favicon-32x32.png' %}" type="image/x-icon">
 
    {% block title %}<title>Sergey Vardanyan</title>{% endblock title %}
 
@@ -65,10 +65,10 @@
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Web Tools </a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">IP Lookup</a>
+                      <a class="dropdown-item" href="{% url 'webtools:iplookup' %}">IP Lookup</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">SHA</a>
+                      <a class="dropdown-item" href="{% url 'webtools:sha-functions' %}">SHA Functions</a>
                     </li>
                   </ul>
 
@@ -100,7 +100,7 @@
         </div>
         <hr>
           {% now "Y" as current_year %}
-          <span>Copyright {{ current_year }} &#169; Sergey Vardanyan
+          <span>Copyright {{ current_year }} &#169; Sergey Vardanyan</span>
           <span class="social-links"><a href="mailto://srg.v@posteo.us">Drop me a line</a></span>
       </div>
       </div>

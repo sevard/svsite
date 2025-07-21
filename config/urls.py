@@ -20,6 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='core/about.html'), name='about'),
-    path("core/", include("core.urls")),
     path('admin/', admin.site.urls),
+    path("core/", include("core.urls")),
+    path('webtools/', include('webtools.urls')),
 ]

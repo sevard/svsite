@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.env
 # Application definition
 
 INSTALLED_APPS = [
+    'webtools.apps.WebtoolsConfig',
     'apps.core.apps.CoreConfig',
     'apps.users.apps.UsersConfig',
     'django.contrib.admin',

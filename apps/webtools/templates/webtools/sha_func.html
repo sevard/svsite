@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %} <title>Sha Functions</title> {% endblock title %}
+
+{% block content %}
+    <main class="container mt-5">
+        <article class="mt-5">
+
+            <div class="row justify-content-sm-center">
+
+                <h1 class="col-sm-10 display-5">SHA Hash Generator</h1>
+
+                <small class="col-sm-10"> Learn more about 
+                    <a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms" target="_blank" rel="noopener">Secure Hash Algorithms (SHA)</a>.  
+                </small>
+
+            </div> 
+
+            <section class="row g-4 py-5 justify-content-sm-center"> 
+
+                <div class="col-sm-10">
+                    <h2 class="lead">Enter text below to generate SHA hash values instantly.</h2>
+                </div>
+
+                <div class="col-sm-10">
+                        <!-- No custom style needed; use Bootstrap's border class -->
+                        <textarea class="form-control border border-primary" id="input-text" rows="4" 
+                            placeholder="Type or paste your text here..." oninput="convertToSha()"></textarea>
+                </div>
+
+
+                <div class="col-sm-10">
+                    <button class="btn-clipboard" title="Copy to clipboard" id="btn-sha1" 
+                        onclick="copyToClipboard('sha1')" 
+                        onmouseover="resetBtnText('btn-sha1')">Copy</button>
+
+                    <label for="sha1" class="form-label">SHA-1</label>
+                    <textarea class="form-control" id="sha1" rows="2" readonly></textarea>
+                </div>
+
+                <div class="col-sm-10">
+                    <button class="btn-clipboard" title="Copy to clipboard" id="btn-sha256" 
+                        onclick="copyToClipboard('sha256')" 
+                        onmouseover="resetBtnText('btn-sha256')">Copy</button>
+                    <label for="sha256" class="form-label">SHA-256</label>
+                    <textarea class="form-control" id="sha256" rows="3" readonly></textarea>
+                </div>
+
+                <div class="col-sm-10">
+                    <button class="btn-clipboard" title="Copy to clipboard" id="btn-sha384" 
+                        onclick="copyToClipboard('sha384')" 
+                        onmouseover="resetBtnText('btn-sha384')">Copy</button>
+                    <label for="sha384" class="form-label">SHA-384</label>
+                    <textarea class="form-control" id="sha384" rows="4" readonly></textarea>
+                </div>
+
+                <div class="col-sm-10">
+                    <button class="btn-clipboard" title="Copy to clipboard" id="btn-sha512" 
+                        onclick="copyToClipboard('sha512')" 
+                        onmouseover="resetBtnText('btn-sha512')">Copy</button>
+                    <label for="sha512" class="form-label">SHA-512</label>
+                    <textarea class="form-control" id="sha512" rows="5" readonly></textarea>
+                </div>
+
+            </section>
+
+        </article>
+    </main>
+{% endblock content %}

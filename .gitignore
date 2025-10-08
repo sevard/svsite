@@ -12,7 +12,11 @@ wheels/
 # Django
 .env
 db.sqlite3
-
+# ignore scollected staticfiles  
+staticfiles
+gunicorn_start.sh
+gunicorn_stop.sh
+sourceme.sh
 
 # Custom
 keep*

@@ -8,8 +8,6 @@ DEBUG = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # Add whitenoise middleware after the security middleware
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -18,30 +16,26 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['AZURE_POSTGRESQL_NAME'],
-        'HOST': os.environ['AZURE_POSTGRESQL_HOST'],
-        'USER': os.environ['AZURE_POSTGRESQL_USER'],
-        'PASSWORD': os.environ['AZURE_POSTGRESQL_PASSWORD'],
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-CACHES = {
-        "default": {  
-            "BACKEND": "django_redis.cache.RedisCache",
-            "LOCATION": os.environ['AZURE_REDIS_CONNECTIONSTRING'],
-            "OPTIONS": {
-                "CLIENT_CLASS": "django_redis.client.DefaultClient",
-                "COMPRESSOR": "django_redis.compressors.zlib.ZlibCompressor",
-        },
-    }
-}
+### Will be changing to PostgreSQL later
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.environ['AZURE_POSTGRESQL_NAME'],
+#        'HOST': os.environ['AZURE_POSTGRESQL_HOST'],
+#        'USER': os.environ['AZURE_POSTGRESQL_USER'],
+#        'PASSWORD': os.environ['AZURE_POSTGRESQL_PASSWORD'],
+#    }
+#}
 
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_SSL_REDIRECT = True
+#SECURE_HSTS_SECONDS = 31536000
+#SECURE_SSL_REDIRECT = True
+
